@@ -26,7 +26,3 @@ class Collection
     thing_of_each_type.join("\n")
   end
 end
-
-
-
-
