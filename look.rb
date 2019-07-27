@@ -10,13 +10,13 @@ if Gem.win_platform?
   end
 end
 
-require_relative 'libs/thing'
-require_relative 'libs/collection'
+require_relative 'lib/thing'
+require_relative 'lib/collection'
 
 puts "Программа, которая рекомендует, как одеться сегодня по погоде."
 puts "\nКакая сейчас температура за окном? (можно с минусом)"
 temp_on_street = STDIN.gets.to_i
 
-collection = Collection.read_from_path(Dir["data/*.txt"], temp_on_street)
+collection = Collection.read_from_path(Dir["#{__dir__}/data/*.txt"], temp_on_street)
 
 puts collection

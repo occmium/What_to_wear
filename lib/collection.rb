@@ -3,8 +3,8 @@
 
 class Collection
   def self.read_from_path(list_of_files, real_temp)
-    collection = list_of_files.map {|element_of_array| Thing.from_file(element_of_array)}
-    temp_based_collection = collection.select { |thing| thing if thing.suit_for_weather?(real_temp) }
+    collection = list_of_files.map { |element_of_array| Thing.from_file(element_of_array) }
+    temp_based_collection = collection.select { |thing| thing.suit_for_weather?(real_temp) }
     new(temp_based_collection)
   end
 
@@ -13,12 +13,12 @@ class Collection
   end
 
   def types_of_things
-    @types = @collection.map {|thing| thing.cloth_type}.uniq
+    @types = @collection.map { |thing| thing.cloth_type }.uniq
   end
 
   def thing_of_each_type
     types_of_things.map do |one_type|
-      @collection.select {|thing| thing if thing.cloth_type == one_type}.sample
+      @collection.select { |thing| thing.cloth_type == one_type }.sample
     end
   end
 
