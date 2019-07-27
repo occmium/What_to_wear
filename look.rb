@@ -12,20 +12,11 @@ end
 
 require_relative 'libs/thing'
 require_relative 'libs/collection'
-thing = Thing.new
-collection = Collection.new
 
 puts "Программа, которая рекомендует, как одеться сегодня по погоде."
 puts "\nКакая сейчас температура за окном? (можно с минусом)"
 temp_on_street = STDIN.gets.to_i
 
-list_of_things = thing.list_of_things
-suitable = thing.suit_for_weather(list_of_things, temp_on_street)
-types_of_things = collection.types_of_things(suitable)
-system "cls"
+collection = Collection.read_from_path(Dir["data/*.txt"], temp_on_street)
 
-puts "На улице #{temp_on_street}! Предлагаем сегодня надеть:\n\n"
-types_of_things.each do |type|
-  random_hash = collection.things_of_one_type(suitable, type).sample
-  puts "#{random_hash[:cloth_name]} (#{random_hash[:cloth_type]}) #{random_hash[:temp_range]}      "
-end
+puts collection
