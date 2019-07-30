@@ -1,5 +1,6 @@
 # encoding: utf-8
 # Задача 26-3 — Что надеть?
+# Задача 31-5 — Тесты на «Что надеть?»
 
 class Thing
   attr_reader :cloth_name, :cloth_type, :temp_range

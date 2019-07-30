@@ -1,0 +1,4 @@
+Name_one
+Type_one
+Range -10 -5
+
