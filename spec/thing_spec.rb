@@ -16,13 +16,14 @@ describe 'Thing' do
   end
 
   it "should true" do
-    (-1..1).each { |integer| expect("#{integer} = #{t.suit_for_weather?(integer)}").to eq "#{integer} = true" }
+    expect(t.suit_for_weather?(-1)).to eq true
+    expect(t.suit_for_weather?(0)).to eq true
+    expect(t.suit_for_weather?(1)).to eq true
   end
 
   it "should false" do
-    (-40..40).each do |integer|
-      expect("#{integer} = #{t.suit_for_weather?(integer)}").to eq "#{integer} = false" if !(-1..1).include?(integer)
-    end
+    expect(t.suit_for_weather?(-2)).to eq false
+    expect(t.suit_for_weather?(2)).to eq false
   end
 
   it "<to_s> method verification is not required!" do
