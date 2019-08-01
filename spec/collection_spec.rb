@@ -48,12 +48,4 @@ describe 'Collection' do
       Collection.read_from_path(Dir["#{__dir__}/fixtures/exam_08_12/*.txt"], -4).types_of_things.sort
     ).to eq %w()
   end
-
-  it "checking a random selection does not seem possible" do
-    # never do
-  end
-
-  it "<to_s> method verification is not required!" do
-    # never do
-  end
 end

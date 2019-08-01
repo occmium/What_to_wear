@@ -25,8 +25,4 @@ describe 'Thing' do
     expect(t.suit_for_weather?(-2)).to eq false
     expect(t.suit_for_weather?(2)).to eq false
   end
-
-  it "<to_s> method verification is not required!" do
-    # never do
-  end
 end
